@@ -132,7 +132,7 @@ def do_discover(sf: Salesforce, streams: list[str]):
         global_description = sf.describe()
         objects_to_discover = {o['name'] for o in global_description['sobjects']}
     else:
-        LOGGER.info(f"Start discovery: {streams=}")
+        LOGGER.info(f"Start discovery: of streams={streams}")
         objects_to_discover = streams
 
     key_properties = ['Id']
